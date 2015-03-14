@@ -14,17 +14,23 @@ function getNav() {
 }
 
 function addSidebarToggler() {
-  if(!$('body').hasClass('sidebar-footer')) {
-    $('#content').append('<span class="toggle-sidebar"></span>');
-    $('.toggle-sidebar').bind('click', function(e) {
-      e.preventDefault();
-      if ($('body').hasClass('collapse-sidebar')) {
-        $('body').removeClass('collapse-sidebar');
-      } else {
-        $('body').addClass('collapse-sidebar');
-      }
-    });
-  }
+  /* 
+  I removed this conditional so that the sidebar would permanently go away.
+  I always want it in footer-mode.
+  However, there is a colored vertical bar on the right edge still present. 
+  - it gets removed by editing static/css/main.css. 
+  */
+  // if(!$('body').hasClass('sidebar-footer')) {
+  //   $('#content').append('<span class="toggle-sidebar"></span>');
+  //   $('.toggle-sidebar').bind('click', function(e) {
+  //     e.preventDefault();
+  //     if ($('body').hasClass('collapse-sidebar')) {
+  //       $('body').removeClass('collapse-sidebar');
+  //     } else {
+  //       $('body').addClass('collapse-sidebar');
+  //     }
+  //   });
+  // }
   var sections = $('aside.sidebar > section');
   if (sections.length > 1) {
     sections.each(function(section, index){
